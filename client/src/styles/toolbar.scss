@@ -4,9 +4,13 @@
     height: $toolbar-height;
     background-color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: absolute;
-    width: 100%;
+    gap: 15px;
+    width: 60px;
+    height: 100%;
+    padding: 20px 10px;
     box-shadow: 0 4px 5px gray;
     z-index: 999;
 
@@ -17,33 +21,35 @@
         outline: none;
         cursor: pointer;
         background-size: cover;
-        margin-left: 10px;
+        &.brush {
+            background: url("../assets/img/brush.png") no-repeat center center;
+        }
+        &.rect {
+            background: url("../assets/img/rect.png") no-repeat center center;
+        }
+        &.circle {
+            background: url("../assets/img/circle.png") no-repeat center center;
+        }
+        &.eraser {
+            background: url("../assets/img/eraser.png") no-repeat center center;
+        }
+        &.line {
+            background: url("../assets/img/line.png") no-repeat center center;
+        }
+        &.undo {
+            background: url("../assets/img/undo.png") no-repeat center center;
+        }
+        &.redo {
+            background: url("../assets/img/redo.png") no-repeat center center;
+        }
+        &.save {
+            background: url("../assets/img/save.png") no-repeat center center;
+        }
     }
-    .brush {
-        background: url("../assets/img/brush.png") no-repeat center center;
-    }
-    .rect {
-        background: url("../assets/img/rect.png") no-repeat center center;
-    }
-    .circle {
-        background: url("../assets/img/circle.png") no-repeat center center;
-    }
-    .eraser {
-        background: url("../assets/img/eraser.png") no-repeat center center;
-    }
-    .line {
-        background: url("../assets/img/line.png") no-repeat center center;
-    }
-    .undo {
-        margin-left: auto;
-        background: url("../assets/img/undo.png") no-repeat center center;
-    }
-    .redo {
-        background: url("../assets/img/redo.png") no-repeat center center;
-    }
-    .save {
-        background: url("../assets/img/save.png") no-repeat center center;
-        margin-right: 10px;
+
+    &__color {
+        width: 40px;
+        cursor: pointer;
     }
 }
 
@@ -53,7 +59,16 @@
     display: flex;
     align-items: center;
     position: absolute;
-    width: 100%;
     box-shadow: 0 4px 5px gray;
-    top: $toolbar-height;
+    padding: 0px 20px;
+    left: 60px;
+    gap: 10px;
+
+    &__input {
+        width: 50px;
+        text-align: center;
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
 }
